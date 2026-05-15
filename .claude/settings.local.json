@@ -9,7 +9,11 @@
       "Bash(npm view *)",
       "Bash(npm cache *)",
       "Bash(npx --yes create-next-app@latest . --js --app --tailwind --eslint --src-dir --import-alias \"@/*\" --use-npm --yes --no-turbopack)",
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "WebFetch(domain:www.drkahlforcongress.com)",
+      "Bash(node run.js /c/Users/General/AppData/Local/Temp/playwright-test-freedompulse.js)",
+      "Bash(node run.js /c/Users/General/AppData/Local/Temp/playwright-test-fp-mobile.js)",
+      "Bash(node run.js /c/Users/General/AppData/Local/Temp/playwright-test-fp-shots.js)"
     ]
   }
 }
