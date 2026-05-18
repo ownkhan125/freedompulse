@@ -8,12 +8,11 @@ import { MagneticButton } from "@/components/anim/MagneticButton";
 import { cn } from "@/utils/cn";
 
 const NAV = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Platform", href: "#platform" },
-  { label: "Events", href: "#events" },
-  { label: "Volunteer", href: "#volunteer" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Events", href: "/events" },
+  { label: "Volunteer", href: "/volunteer" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export function Header() {
@@ -50,15 +49,15 @@ export function Header() {
           scrolled && "scale-x-100",
         )}
       />
-      <Container className="flex h-[72px] items-center justify-between">
+      <Container className="flex h-16 items-center justify-between gap-3 sm:h-[72px]">
         {/* Logo */}
         <Link
-          href="#home"
-          className="group relative flex items-center gap-2.5"
+          href="/"
+          className="group relative flex shrink-0 items-center gap-2.5"
           aria-label="FreedomPulse home"
         >
           <PulseLogo />
-          <span className="font-display text-lg font-semibold tracking-tight">
+          <span className="font-display text-base font-semibold tracking-tight sm:text-lg">
             Freedom<span className="text-accent">Pulse</span>
           </span>
         </Link>
@@ -81,19 +80,17 @@ export function Header() {
         </nav>
 
         {/* CTA + mobile menu */}
-        <div className="flex items-center gap-3">
-          <MagneticButton
-            href="#donate"
-            variant="solid"
-            className="hidden h-10 px-5 text-[11px] sm:inline-flex"
-          >
-            Donate
-          </MagneticButton>
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+          <span className="hidden sm:inline-flex">
+            <MagneticButton href="/donate" variant="solid" size="sm">
+              Donate
+            </MagneticButton>
+          </span>
           <button
             onClick={() => setOpen((s) => !s)}
             aria-label="Toggle menu"
             aria-expanded={open}
-            className="relative grid h-10 w-10 place-items-center rounded-full border border-foreground/15 transition-colors hover:bg-foreground/[0.05] lg:hidden"
+            className="relative grid h-10 w-10 shrink-0 place-items-center rounded-full border border-foreground/15 transition-colors hover:bg-foreground/[0.05] lg:hidden"
           >
             <span
               className={cn(
@@ -145,10 +142,10 @@ export function Header() {
                 </motion.a>
               ))}
               <div className="mt-3 flex gap-2 px-2">
-                <MagneticButton href="#donate" variant="solid" className="flex-1">
+                <MagneticButton href="/donate" variant="solid" className="flex-1">
                   Donate
                 </MagneticButton>
-                <MagneticButton href="#volunteer" variant="outline" className="flex-1">
+                <MagneticButton href="/volunteer" variant="outline" className="flex-1">
                   Join us
                 </MagneticButton>
               </div>

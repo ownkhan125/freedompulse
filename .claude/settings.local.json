@@ -13,7 +13,14 @@
       "WebFetch(domain:www.drkahlforcongress.com)",
       "Bash(node run.js /c/Users/General/AppData/Local/Temp/playwright-test-freedompulse.js)",
       "Bash(node run.js /c/Users/General/AppData/Local/Temp/playwright-test-fp-mobile.js)",
-      "Bash(node run.js /c/Users/General/AppData/Local/Temp/playwright-test-fp-shots.js)"
+      "Bash(node run.js /c/Users/General/AppData/Local/Temp/playwright-test-fp-shots.js)",
+      "Bash(node run.js /c/Users/General/AppData/Local/Temp/playwright-nav-diag.js)",
+      "Bash(grep -E \"^\\(tailwind-merge|clsx\\)$\")",
+      "Bash(node run.js /c/Users/General/AppData/Local/Temp/playwright-final-audit.js)",
+      "Bash(node -e \"require\\('./lib/helpers'\\).detectDevServers\\(\\).then\\(s => console.log\\(JSON.stringify\\(s\\)\\)\\)\")",
+      "Bash(node run.js /c/Users/General/AppData/Local/Temp/playwright-crawl-ref.js)",
+      "Bash(node run.js /c/Users/General/AppData/Local/Temp/playwright-test-all-pages.js)",
+      "Bash(node run.js /c/Users/General/AppData/Local/Temp/playwright-test-routes.js)"
     ]
   }
 }

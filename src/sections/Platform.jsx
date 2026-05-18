@@ -88,7 +88,7 @@ export function Platform() {
               <span className="block overflow-hidden">
                 <SplitText text="Plain promises." />
               </span>
-              <span className="block overflow-hidden text-accent">
+              <span className="block overflow-hidden">
                 <SplitText text="Stubborn delivery." delay={0.2} />
               </span>
             </h2>

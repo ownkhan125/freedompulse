@@ -22,13 +22,12 @@ export function Hero() {
 
   const yBg = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const yContent = useTransform(scrollYProgress, [0, 1], [0, 80]);
-  const opacityScroll = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
   return (
     <section
       id="home"
       ref={ref}
-      className="relative isolate min-h-[100svh] overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28"
+      className="relative isolate min-h-[100svh] overflow-x-clip overflow-y-hidden pt-28 pb-20 sm:pt-40 sm:pb-28"
     >
       {/* Animated SVG / gradient background */}
       <motion.div style={{ y: yBg }} className="pointer-events-none absolute inset-0">
@@ -39,12 +38,12 @@ export function Hero() {
       <motion.div style={{ y: yContent }} className="relative z-10">
         <Container>
           {/* Eyebrow */}
-          <Reveal y={12} duration={0.8} className="flex items-center gap-3">
+          <Reveal y={12} duration={0.8} className="flex flex-wrap items-center gap-3">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
             </span>
-            <span className="font-mono text-[11px] uppercase tracking-[0.35em] text-foreground/60">
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/60 sm:text-[11px] sm:tracking-[0.35em]">
               Congressional Campaign · 2026
             </span>
           </Reveal>
@@ -60,7 +59,6 @@ export function Hero() {
                 stagger={0.035}
                 duration={0.85}
                 delay={0.25}
-                className="italic text-accent"
               />
             </span>
             <span className="block overflow-hidden">
@@ -69,7 +67,6 @@ export function Hero() {
                 stagger={0.025}
                 duration={0.8}
                 delay={0.55}
-                className="text-foreground/75"
               />
             </span>
           </h1>
@@ -108,7 +105,7 @@ export function Hero() {
 
           {/* Stats row */}
           <Reveal delay={1.35} y={20} className="mt-20">
-            <div className="relative grid grid-cols-2 gap-x-6 gap-y-8 border-t border-foreground/10 pt-8 sm:grid-cols-3 sm:gap-x-10">
+            <div className="relative grid grid-cols-2 gap-x-4 gap-y-8 border-t border-foreground/10 pt-8 sm:grid-cols-3 sm:gap-x-10">
               {STATS.map((s, i) => (
                 <motion.div
                   key={s.label}
@@ -140,21 +137,6 @@ export function Hero() {
             </div>
           </Reveal>
         </Container>
-
-        {/* Scroll indicator */}
-        <motion.div
-          style={{ opacity: opacityScroll }}
-          className="pointer-events-none absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex"
-        >
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/40">
-            Scroll
-          </span>
-          <motion.span
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-            className="h-8 w-px bg-gradient-to-b from-foreground/40 to-transparent"
-          />
-        </motion.div>
       </motion.div>
     </section>
   );

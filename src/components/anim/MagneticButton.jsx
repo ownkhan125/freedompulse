@@ -4,14 +4,31 @@ import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { cn } from "@/utils/cn";
 
+const SIZE = {
+  sm: "h-9 px-4 text-[10px] tracking-[0.18em]",
+  md: "h-12 px-7 text-[13px] tracking-[0.18em]",
+};
+
+const VARIANT = {
+  solid:
+    "bg-accent text-background hover:bg-[color-mix(in_srgb,var(--accent)_88%,white)] shadow-[0_10px_40px_-12px_var(--glow-accent)]",
+  outline:
+    "bg-transparent text-foreground border border-foreground/20 hover:border-foreground/50 hover:bg-foreground/[0.04]",
+  ghost: "bg-foreground/[0.04] text-foreground hover:bg-foreground/[0.08]",
+  gold:
+    "bg-gold text-background hover:bg-[color-mix(in_srgb,var(--gold)_88%,white)] shadow-[0_10px_40px_-12px_var(--glow-gold)]",
+};
+
 /**
  * Magnetic button: tracks cursor with inertia.
- * Variants: solid (accent), outline (border), ghost (text).
+ * - size: "sm" (compact, navbar) | "md" (default, in-page)
+ * - variant: "solid" | "outline" | "ghost" | "gold"
  */
 export function MagneticButton({
   children,
   className = "",
   variant = "solid",
+  size = "md",
   href,
   onClick,
   ariaLabel,
@@ -40,17 +57,6 @@ export function MagneticButton({
     y.set(0);
   }
 
-  const variants = {
-    solid:
-      "bg-accent text-background hover:bg-[color-mix(in_srgb,var(--accent)_88%,white)] shadow-[0_10px_40px_-12px_var(--glow-accent)]",
-    outline:
-      "bg-transparent text-foreground border border-foreground/20 hover:border-foreground/50 hover:bg-foreground/[0.04]",
-    ghost:
-      "bg-foreground/[0.04] text-foreground hover:bg-foreground/[0.08]",
-    gold:
-      "bg-gold text-background hover:bg-[color-mix(in_srgb,var(--gold)_88%,white)] shadow-[0_10px_40px_-12px_var(--glow-gold)]",
-  };
-
   const Tag = href ? motion.a : motion.button;
 
   return (
@@ -63,8 +69,9 @@ export function MagneticButton({
       onMouseLeave={handleLeave}
       style={{ x: sx, y: sy }}
       className={cn(
-        "group relative inline-flex h-12 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full px-7 text-[13px] font-medium uppercase tracking-[0.18em] transition-colors duration-300 will-change-transform",
-        variants[variant],
+        "group relative inline-flex cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full font-medium uppercase transition-colors duration-300 will-change-transform",
+        SIZE[size],
+        VARIANT[variant],
         className,
       )}
       whileTap={{ scale: 0.97 }}
@@ -72,7 +79,7 @@ export function MagneticButton({
     >
       <motion.span
         style={{ x: labelX, y: labelY }}
-        className="relative z-10 flex items-center gap-2"
+        className="relative z-10 flex items-center gap-2 whitespace-nowrap"
       >
         {children}
         {icon ? (

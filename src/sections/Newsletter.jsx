@@ -43,10 +43,10 @@ export function Newsletter() {
                 <span className="block overflow-hidden">
                   <SplitText text="Get the pulse." />
                 </span>
-                <span className="block overflow-hidden text-foreground/65">
+                <span className="block overflow-hidden">
                   <SplitText text="Once a week." delay={0.18} />
                 </span>
-                <span className="block overflow-hidden italic text-accent">
+                <span className="block overflow-hidden">
                   <SplitText text="No spin." delay={0.36} />
                 </span>
               </h2>
@@ -83,10 +83,10 @@ export function Newsletter() {
                   <motion.button
                     type="submit"
                     whileTap={{ scale: 0.96 }}
-                    className="group/btn relative m-1.5 inline-flex shrink-0 items-center gap-2 overflow-hidden rounded-full bg-accent px-6 text-[12px] font-medium uppercase tracking-[0.2em] text-background transition-colors hover:bg-[color-mix(in_srgb,var(--accent)_88%,white)]"
+                    className="group/btn relative m-1.5 inline-flex shrink-0 items-center gap-2 overflow-hidden rounded-full bg-accent px-4 text-[11px] font-medium uppercase tracking-[0.15em] text-background transition-colors hover:bg-[color-mix(in_srgb,var(--accent)_88%,white)] sm:px-6 sm:text-[12px] sm:tracking-[0.2em]"
                   >
                     <span className="relative z-10">
-                      {sent ? "On the list" : "Sign me up"}
+                      {sent ? "On the list" : "Join"}
                     </span>
                     <span
                       aria-hidden

@@ -108,7 +108,7 @@ export function About() {
               <span className="block overflow-hidden">
                 <SplitText text="Service before slogans." duration={0.8} />
               </span>
-              <span className="block overflow-hidden text-foreground/65">
+              <span className="block overflow-hidden">
                 <SplitText
                   text="Action before applause."
                   duration={0.8}

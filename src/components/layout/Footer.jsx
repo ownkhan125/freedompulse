@@ -11,30 +11,21 @@ const CONTACT = [
 
 const COLUMNS = [
   {
-    title: "Campaign",
+    title: "Pages",
     links: [
-      { label: "About", href: "#about" },
-      { label: "Platform", href: "#platform" },
-      { label: "Endorsements", href: "#endorsements" },
-      { label: "Press", href: "#press" },
+      { label: "Home", href: "/" },
+      { label: "About", href: "/about" },
+      { label: "Events", href: "/events" },
+      { label: "Volunteer", href: "/volunteer" },
+      { label: "Donate", href: "/donate" },
+      { label: "Contact", href: "/contact" },
     ],
   },
   {
-    title: "Get involved",
+    title: "Legal",
     links: [
-      { label: "Volunteer", href: "#volunteer" },
-      { label: "Events", href: "#events" },
-      { label: "Donate", href: "#donate" },
-      { label: "Yard signs", href: "#signs" },
-    ],
-  },
-  {
-    title: "Connect",
-    links: [
-      { label: "Newsletter", href: "#newsletter" },
-      { label: "Instagram", href: "#" },
-      { label: "X / Twitter", href: "#" },
-      { label: "YouTube", href: "#" },
+      { label: "Privacy policy", href: "/privacy-policy" },
+      { label: "Terms of service", href: "/terms-of-service" },
     ],
   },
 ];
@@ -53,11 +44,11 @@ export function Footer() {
         {/* Big closing line */}
         <Reveal className="mb-14 max-w-4xl">
           <p className="font-display text-4xl leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
-            The pulse of freedom <span className="italic text-accent">starts</span> with you.
+            The pulse of freedom starts with you.
           </p>
         </Reveal>
 
-        <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr_1fr]">
           <div>
             <div className="font-display text-xl font-semibold tracking-tight">
               Freedom<span className="text-accent">Pulse</span>
@@ -109,7 +100,7 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} FreedomPulse. All rights reserved.
           </p>
-          <p className="font-mono uppercase tracking-[0.2em]">
+          <p className="max-w-md text-pretty font-mono uppercase leading-relaxed tracking-[0.15em] sm:tracking-[0.2em]">
             Paid for by FreedomPulse for Congress · Not authorized by any candidate or candidate&apos;s committee.
           </p>
         </div>

@@ -80,7 +80,6 @@ export function GetInvolved() {
                 <SplitText
                   text="of three things:"
                   delay={0.18}
-                  className="text-foreground/65"
                 />
               </span>
             </h2>

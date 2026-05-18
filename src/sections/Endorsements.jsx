@@ -82,7 +82,7 @@ export function Endorsements() {
               <span className="block overflow-hidden">
                 <SplitText text="The people who" />
               </span>
-              <span className="block overflow-hidden italic text-accent">
+              <span className="block overflow-hidden">
                 <SplitText text="know the work." delay={0.2} />
               </span>
             </h2>
