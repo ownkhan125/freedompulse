@@ -5,7 +5,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import { Container } from "@/components/ui/Container";
 import { MagneticButton } from "@/components/anim/MagneticButton";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/cn";
 
 const NAV = [
   { label: "Home", href: "/" },

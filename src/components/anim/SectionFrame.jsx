@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/cn";
 
 /**
  * Section wrapper that builds in when entering viewport:

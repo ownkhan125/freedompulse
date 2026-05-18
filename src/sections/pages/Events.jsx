@@ -10,7 +10,7 @@ import { SplitText } from "@/components/anim/SplitText";
 import { Reveal, RevealStagger, revealItem } from "@/components/anim/Reveal";
 import { MagneticButton } from "@/components/anim/MagneticButton";
 import { Img } from "@/components/ui/Img";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/cn";
 import { EVENTS, EVENT_CATEGORIES as CATEGORIES } from "@/data/events";
 
 export function EventsPage() {

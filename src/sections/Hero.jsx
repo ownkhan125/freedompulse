@@ -6,11 +6,12 @@ import { Container } from "@/components/ui/Container";
 import { MagneticButton } from "@/components/anim/MagneticButton";
 import { SplitText } from "@/components/anim/SplitText";
 import { Reveal, RevealStagger, revealItem } from "@/components/anim/Reveal";
+import { Counter, CounterGroup } from "@/components/anim/Counter";
 
 const STATS = [
-  { value: "22", suffix: "yrs", label: "Public service" },
-  { value: "84", suffix: "k", label: "Voters reached" },
-  { value: "0", suffix: "$", label: "Corporate PAC money" },
+  { value: 22, suffix: "yrs", label: "Public service" },
+  { value: 84, suffix: "k", label: "Voters reached" },
+  { value: 0, suffix: "$", label: "Corporate PAC money" },
 ];
 
 export function Hero() {
@@ -105,36 +106,44 @@ export function Hero() {
 
           {/* Stats row */}
           <Reveal delay={1.35} y={20} className="mt-20">
-            <div className="relative grid grid-cols-2 gap-x-4 gap-y-8 border-t border-foreground/10 pt-8 sm:grid-cols-3 sm:gap-x-10">
-              {STATS.map((s, i) => (
-                <motion.div
-                  key={s.label}
-                  initial={{ opacity: 0, y: 18 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.5 + i * 0.12, duration: 0.7 }}
-                  className="group relative"
-                >
-                  <div className="flex items-baseline gap-1.5">
-                    <span className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">
-                      {s.value}
-                    </span>
-                    <span className="font-display text-2xl text-accent sm:text-3xl">
-                      {s.suffix}
-                    </span>
-                  </div>
-                  <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/45">
-                    {s.label}
-                  </div>
-                  {/* Vertical ticks */}
-                  {i < STATS.length - 1 && (
-                    <span
-                      aria-hidden
-                      className="absolute right-0 top-0 hidden h-full w-px bg-gradient-to-b from-transparent via-foreground/15 to-transparent sm:block"
-                    />
-                  )}
-                </motion.div>
-              ))}
-            </div>
+            <CounterGroup amount={0.3} rootMargin="0px 0px -10% 0px">
+              {(start) => (
+                <div className="relative grid grid-cols-2 gap-x-4 gap-y-8 border-t border-foreground/10 pt-8 sm:grid-cols-3 sm:gap-x-10">
+                  {STATS.map((s, i) => (
+                    <motion.div
+                      key={s.label}
+                      initial={{ opacity: 0, y: 18 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 1.5 + i * 0.12, duration: 0.7 }}
+                      className="group relative"
+                    >
+                      <div className="flex items-baseline gap-1.5">
+                        <Counter
+                          to={s.value}
+                          duration={1.6}
+                          delay={i * 0.18}
+                          start={start}
+                          className="font-display text-4xl font-semibold tracking-tight sm:text-5xl"
+                        />
+                        <span className="font-display text-2xl text-accent sm:text-3xl">
+                          {s.suffix}
+                        </span>
+                      </div>
+                      <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/45">
+                        {s.label}
+                      </div>
+                      {/* Vertical ticks */}
+                      {i < STATS.length - 1 && (
+                        <span
+                          aria-hidden
+                          className="absolute right-0 top-0 hidden h-full w-px bg-gradient-to-b from-transparent via-foreground/15 to-transparent sm:block"
+                        />
+                      )}
+                    </motion.div>
+                  ))}
+                </div>
+              )}
+            </CounterGroup>
           </Reveal>
         </Container>
       </motion.div>

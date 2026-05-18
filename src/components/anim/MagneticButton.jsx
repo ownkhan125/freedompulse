@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/cn";
 
 const SIZE = {
   sm: "h-9 px-4 text-[10px] tracking-[0.18em]",

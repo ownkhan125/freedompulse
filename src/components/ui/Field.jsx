@@ -2,7 +2,7 @@
 
 import { useId } from "react";
 import { motion } from "motion/react";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/cn";
 
 export function FormFieldset({ legend, hint, children, className = "" }) {
   return (

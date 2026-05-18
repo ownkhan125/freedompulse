@@ -1,4 +1,4 @@
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/cn";
 
 export function Container({ className, children, as: Tag = "div", ...rest }) {
   return (

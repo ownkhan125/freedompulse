@@ -20,7 +20,12 @@
       "Bash(node -e \"require\\('./lib/helpers'\\).detectDevServers\\(\\).then\\(s => console.log\\(JSON.stringify\\(s\\)\\)\\)\")",
       "Bash(node run.js /c/Users/General/AppData/Local/Temp/playwright-crawl-ref.js)",
       "Bash(node run.js /c/Users/General/AppData/Local/Temp/playwright-test-all-pages.js)",
-      "Bash(node run.js /c/Users/General/AppData/Local/Temp/playwright-test-routes.js)"
+      "Bash(node run.js /c/Users/General/AppData/Local/Temp/playwright-test-routes.js)",
+      "Bash(node run.js /c/Users/General/AppData/Local/Temp/playwright-counter-test.js)",
+      "Bash(node run.js /c/Users/General/AppData/Local/Temp/playwright-counter-test2.js)",
+      "Bash(node run.js /c/Users/General/AppData/Local/Temp/playwright-counter-test3.js)",
+      "Bash(node run.js /c/Users/General/AppData/Local/Temp/playwright-hero-counter.js)",
+      "Bash(node run.js /c/Users/General/AppData/Local/Temp/playwright-verify-style.js)"
     ]
   }
 }

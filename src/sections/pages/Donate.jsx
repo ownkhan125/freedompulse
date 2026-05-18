@@ -8,6 +8,7 @@ import { SectionFrame } from "@/components/anim/SectionFrame";
 import { SplitText } from "@/components/anim/SplitText";
 import { Reveal, RevealStagger, revealItem } from "@/components/anim/Reveal";
 import { MagneticButton } from "@/components/anim/MagneticButton";
+import { Counter, CounterGroup } from "@/components/anim/Counter";
 import { Img } from "@/components/ui/Img";
 import {
   FormFieldset,
@@ -17,7 +18,7 @@ import {
   Select,
   Checkbox,
 } from "@/components/ui/Field";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/cn";
 
 const AMOUNTS = [
   { value: 10, label: "$10", note: "Coffee for a phone bank" },
@@ -289,32 +290,39 @@ export function DonatePage() {
                   <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
                     Where it goes
                   </div>
-                  <ul className="mt-5 space-y-3 text-sm text-foreground/80">
-                    <li className="flex items-baseline justify-between gap-4 border-b border-foreground/10 pb-3">
-                      <span>Field operation</span>
-                      <span className="font-display text-xl font-semibold tracking-tight text-foreground">
-                        62%
-                      </span>
-                    </li>
-                    <li className="flex items-baseline justify-between gap-4 border-b border-foreground/10 pb-3">
-                      <span>Communications</span>
-                      <span className="font-display text-xl font-semibold tracking-tight text-foreground">
-                        21%
-                      </span>
-                    </li>
-                    <li className="flex items-baseline justify-between gap-4 border-b border-foreground/10 pb-3">
-                      <span>Compliance & ops</span>
-                      <span className="font-display text-xl font-semibold tracking-tight text-foreground">
-                        12%
-                      </span>
-                    </li>
-                    <li className="flex items-baseline justify-between gap-4">
-                      <span>Tools & tech</span>
-                      <span className="font-display text-xl font-semibold tracking-tight text-foreground">
-                        5%
-                      </span>
-                    </li>
-                  </ul>
+                  <CounterGroup
+                    as="ul"
+                    amount={0.25}
+                    rootMargin="0px 0px -8% 0px"
+                    className="mt-5 space-y-3 text-sm text-foreground/80"
+                  >
+                    {(start) => {
+                      const rows = [
+                        { label: "Field operation", value: 62 },
+                        { label: "Communications", value: 21 },
+                        { label: "Compliance & ops", value: 12 },
+                        { label: "Tools & tech", value: 5 },
+                      ];
+                      return rows.map((row, i) => (
+                        <li
+                          key={row.label}
+                          className={`flex items-baseline justify-between gap-4 ${
+                            i < rows.length - 1 ? "border-b border-foreground/10 pb-3" : ""
+                          }`}
+                        >
+                          <span>{row.label}</span>
+                          <Counter
+                            to={row.value}
+                            duration={1.6}
+                            delay={i * 0.12}
+                            suffix="%"
+                            start={start}
+                            className="font-display text-xl font-semibold tracking-tight text-foreground"
+                          />
+                        </li>
+                      ));
+                    }}
+                  </CounterGroup>
                   <p className="mt-5 text-[12px] leading-5 text-foreground/45">
                     Allocation reported quarterly. Past statements available on
                     request.

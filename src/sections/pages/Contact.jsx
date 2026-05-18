@@ -17,7 +17,7 @@ import {
   Textarea,
   Checkbox,
 } from "@/components/ui/Field";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/cn";
 
 const REACHES = [
   {
