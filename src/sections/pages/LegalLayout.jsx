@@ -53,9 +53,13 @@ export function LegalLayout({ title, eyebrow, kicker, lastUpdated, sections }) {
                     const isActive = active === s.id;
                     return (
                       <li key={s.id}>
-                        <a
-                          href={`#${s.id}`}
-                          className={`group relative block py-2 pl-5 pr-3 text-[13px] leading-5 transition-colors ${
+                        <button
+                          type="button"
+                          onClick={() => {
+                            const el = document.getElementById(s.id);
+                            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+                          }}
+                          className={`group relative block w-full cursor-pointer py-2 pl-5 pr-3 text-left text-[13px] leading-5 transition-colors ${
                             isActive
                               ? "text-foreground"
                               : "text-foreground/55 hover:text-foreground"
@@ -71,7 +75,7 @@ export function LegalLayout({ title, eyebrow, kicker, lastUpdated, sections }) {
                             {String(i + 1).padStart(2, "0")}
                           </span>
                           {s.heading}
-                        </a>
+                        </button>
                       </li>
                     );
                   })}

@@ -89,7 +89,7 @@ export function Hero() {
             >
               <motion.div variants={revealItem}>
                 <MagneticButton
-                  href="#volunteer"
+                  href="/volunteer"
                   variant="solid"
                   icon={<ArrowIcon />}
                 >
@@ -97,7 +97,7 @@ export function Hero() {
                 </MagneticButton>
               </motion.div>
               <motion.div variants={revealItem}>
-                <MagneticButton href="#about" variant="outline">
+                <MagneticButton href="/about" variant="outline">
                   Meet the candidate
                 </MagneticButton>
               </motion.div>

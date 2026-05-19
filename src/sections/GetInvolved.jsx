@@ -11,6 +11,7 @@ import { MagneticButton } from "@/components/anim/MagneticButton";
 const ACTIONS = [
   {
     id: "volunteer",
+    href: "/volunteer",
     n: "01",
     title: "Volunteer",
     body: "Knock doors, run a phone bank, drop literature, host a meet-and-greet. We&apos;ll match you with a captain in your precinct.",
@@ -19,6 +20,7 @@ const ACTIONS = [
   },
   {
     id: "donate",
+    href: "/donate",
     n: "02",
     title: "Donate",
     body: "100% of donations stay in district. No corporate PACs. Even $5 keeps a phone bank running for an hour.",
@@ -27,6 +29,7 @@ const ACTIONS = [
   },
   {
     id: "events",
+    href: "/events",
     n: "03",
     title: "Show up",
     body: "Town halls, ride-alongs with first responders, listening sessions on every corner. Bring questions.",
@@ -37,21 +40,25 @@ const ACTIONS = [
 
 const EVENTS = [
   {
+    slug: "astoria-maritime",
     date: "JUN 04",
     title: "Town Hall — Astoria Maritime Workers",
     location: "ILWU Hall, Astoria · 6:30 PM",
   },
   {
+    slug: "hillsboro-coffee",
     date: "JUN 11",
     title: "Coffee with Avery — Small Business Roundtable",
     location: "The Press Room, Hillsboro · 8:00 AM",
   },
   {
+    slug: "juneteenth-bbq",
     date: "JUN 19",
     title: "Juneteenth Community BBQ",
     location: "Mt. Tabor Park, Portland · 2:00 PM",
   },
   {
+    slug: "tillamook-walk",
     date: "JUN 27",
     title: "Walk & Talk — Forest Stewardship Loop",
     location: "Tillamook State Forest · 9:00 AM",
@@ -103,13 +110,13 @@ export function GetInvolved() {
         </RevealStagger>
 
         {/* Events list */}
-        <div id="events" className="mt-28">
+        <div className="mt-28">
           <Reveal y={10} className="mb-8 flex items-baseline justify-between">
             <h3 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
               Upcoming events
             </h3>
             <a
-              href="#events-all"
+              href="/events"
               className="group inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.25em] text-foreground/60 hover:text-foreground"
             >
               Full calendar
@@ -125,7 +132,7 @@ export function GetInvolved() {
             {EVENTS.map((e, i) => (
               <motion.a
                 key={e.title}
-                href="#rsvp"
+                href={`/events/${e.slug}`}
                 variants={revealItem}
                 whileHover={{ x: 6 }}
                 transition={{ type: "spring", stiffness: 200, damping: 20 }}
@@ -184,8 +191,7 @@ function ActionCard({ action }) {
 
   return (
     <motion.a
-      id={action.id}
-      href={`#${action.id}-form`}
+      href={action.href}
       variants={revealItem}
       onMouseMove={onMove}
       onMouseEnter={() => setHover(true)}

@@ -19,6 +19,12 @@ import {
 } from "@/components/ui/Field";
 import { getRelatedEvents } from "@/data/events";
 
+function scrollToRegister() {
+  if (typeof window === "undefined") return;
+  const el = document.getElementById("register");
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 export function EventDetailPage({ event }) {
   const related = getRelatedEvents(event.id, 3);
 
@@ -114,7 +120,7 @@ function EventHero({ event }) {
 
         {/* CTAs */}
         <Reveal y={20} delay={1.05} className="mt-10 flex flex-wrap gap-3">
-          <MagneticButton href="#register" variant="solid">
+          <MagneticButton onClick={scrollToRegister} variant="solid">
             RSVP for this event
           </MagneticButton>
           <MagneticButton href="/events" variant="outline">
@@ -246,7 +252,7 @@ function EventOverview({ event }) {
                   <LogisticsRow label="Accessibility" value={event.accessibility} />
                 </dl>
                 <div className="mt-7 border-t border-foreground/10 pt-5">
-                  <MagneticButton href="#register" variant="solid" size="sm">
+                  <MagneticButton onClick={scrollToRegister} variant="solid" size="sm">
                     RSVP
                   </MagneticButton>
                 </div>

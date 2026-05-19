@@ -415,7 +415,7 @@ export function VolunteerPage() {
                     A $5 contribution keeps a phone bank running for an hour.
                   </p>
                   <div className="mt-5">
-                    <MagneticButton href="/#donate" variant="solid" size="sm">
+                    <MagneticButton href="/donate" variant="solid" size="sm">
                       Donate
                     </MagneticButton>
                   </div>

@@ -69,7 +69,7 @@ const FAQ = [
   },
   {
     q: "Is the campaign hiring?",
-    a: "We are. Open roles are posted at /careers as they appear. Field organizers, communications, and digital are our current priorities.",
+    a: "We are. Field organizers, communications, and digital are our current priorities. Email volunteer@freedompulse.org for current openings and we'll route you to the hiring lead.",
   },
 ];
 

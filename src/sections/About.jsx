@@ -152,8 +152,8 @@ export function About() {
             </RevealStagger>
 
             <Reveal delay={0.75} className="mt-10">
-              <MagneticButton href="#platform" variant="outline">
-                See the platform
+              <MagneticButton href="/about" variant="outline">
+                Meet the candidate
               </MagneticButton>
             </Reveal>
           </div>

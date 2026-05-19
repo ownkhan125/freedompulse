@@ -177,8 +177,8 @@ export function AboutPage() {
                 <MagneticButton href="/volunteer" variant="solid">
                   Join the campaign
                 </MagneticButton>
-                <MagneticButton href="/#platform" variant="outline">
-                  See the platform
+                <MagneticButton href="/contact" variant="outline">
+                  Get in touch
                 </MagneticButton>
               </Reveal>
             </div>
